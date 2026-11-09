@@ -1,0 +1,19 @@
+# Package metadata and runtime requirements for the spatial-profile tool.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "speckex"
+version = "1.0.0"
+description = "Inspect spatial source profiles in two-dimensional FITS spectra"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "astropy>=5.3", "matplotlib>=3.7", "specreduce==1.5.1", "specutils>=1.9.1,<3"]
+
+[project.scripts]
+speckex = "speckex.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["speckex*"]
